@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.springboot.domain.BaseTimeEntity;
 
-import javax.management.relation.Role;
 import javax.persistence.*;
 
 @Getter
@@ -44,7 +43,6 @@ public class User extends BaseTimeEntity {
     }
 
     public String getRoleKey(){
-        return this.role.getRoleName();
-        //return this.role.getKey();
+        return this.role.getKey();
     }
 }

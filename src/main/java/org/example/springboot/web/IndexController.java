@@ -2,6 +2,8 @@ package org.example.springboot.web;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
+import org.example.springboot.config.auth.LoginUser;
 import org.example.springboot.config.auth.dto.SessionUser;
 import org.example.springboot.service.posts.PostsService;
 import org.example.springboot.web.dto.PostsResponseDto;
@@ -24,9 +26,8 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user != null){
             model.addAttribute("userName", user.getName());
         }
