@@ -1,7 +1,6 @@
 package org.example.springboot.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.geometry.Pos;
 import org.junit.Before;
 import org.example.springboot.domain.posts.Posts;
 import org.example.springboot.domain.posts.PostsRepository;
