@@ -45,7 +45,8 @@ jobs:
           cp Procfile deploy/Procfile
           cp -r .ebextensions deploy/.ebextensions
           cp -r .platform deploy/.platform
-          dd deploy && zip -r deploy.zip .
+          cd deploy && zip -r deploy.zip 
+      
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v21
